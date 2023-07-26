@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main-content %}
+<div class="container-fluid">
+    <div class="col-lg-8 col-lg-offset-2">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Poll Result</h3>
+            </div>
+
+            <div class="panel-body">
+                <h3>{{entity.question}}</h3>
+            </div>
+
+            <ul class="list-group">
+                <li class="list-group-item">{{poll.option_one}} <strong>{{poll.option_count_one}}</strong></li>
+                <li class="list-group-item">{{poll.option_two}} <strong>{{poll.option_count_two}}</strong></li>
+                <li class="list-group-item">{{poll.option_three}} <strong>{{poll.option_count_three}}</strong></li>
+                <li class="list-group-item">{{poll.option_four}} <strong>{{poll.option_count_four}}</strong></li>
+                <li class="list-group-item">{{poll.option_five}} <strong>{{poll.option_count_five}}</strong></li>
+            </ul>
+
+            <div class="panel-footer">
+                Total <strong>{{poll.total}}</strong>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock main-content %}

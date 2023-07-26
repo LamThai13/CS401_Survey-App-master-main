@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main-content %}
+<div class="container ">
+    <div class="col-lg-8 col-lg-offset-2 ">
+                
+            <h3 class="panel-title">Available Polls</h3>
+            <div class="container ">   
+                <ul class="list-group">
+                    {% for question in question  %}
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <strong>{{question.question}}</strong>
+                        <span class="badge badge-primary badge-pill">
+                            <a href="{% url 'vote' question.id %}" class="btn btn-info btn-xs">Vote</a> 
+                            <a href="{% url 'result' question.id %}" class="btn btn-default btn-outline-dark btn-xs">View Results</a> 
+                        </span>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>       
+    </div>
+</div>
+{% endblock main-content %}
+

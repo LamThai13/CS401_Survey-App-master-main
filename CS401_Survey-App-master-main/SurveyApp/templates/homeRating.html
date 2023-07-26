@@ -1,0 +1,31 @@
+{%extends 'base.html'%}
+{% load static %}
+
+{% block main-content %}
+<div class="container ">
+    <div class="col-lg-8 col-lg-offset-2 ">
+                
+            <h3 class="panel-title">Available Rating</h3>
+            <div class="container ">   
+                <ul class="list-group">
+                    
+                    {% for rate_question in rate_question %}
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <h2>{{rate_question.rate_question}}</h2>
+                    <div>
+                        <span class="fa fa-star fa-3x {% if score.score > 0 %} checked {% endif %} "></span>
+                        <span class="fa fa-star fa-3x {% if score.score > 1 %} checked {% endif %} "></span>
+                        <span class="fa fa-star fa-3x {% if score.score > 2 %} checked {% endif %} "></span>
+                        <span class="fa fa-star fa-3x {% if score.score > 3 %} checked {% endif %} "></span>
+                        <span class="fa fa-star fa-3x {% if score.score > 4 %} checked {% endif %} "></span>    
+
+                    </div>
+
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>       
+    </div>
+</div>
+{% endblock main-content %}
+
